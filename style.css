@@ -1,0 +1,449 @@
+/* Global Styles */
+/* Basic styles for header */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    opacity: 0; /* Start with the header invisible */
+    animation: fadeIn 1s forwards; /* Fade in animation */
+    animation-delay: 0.5s; /* Delay the animation a little for smooth effect */
+}
+
+/* Header Container */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Text */
+.header h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+    animation: slideInUp 1s ease-out forwards;
+    animation-delay: 1s; /* Delay the header text animation slightly */
+}
+
+/* Animation for text sliding in */
+@keyframes slideInUp {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Navigation Links */
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    opacity: 0; /* Start with links invisible */
+    animation: fadeInLinks 1s ease-out forwards;
+}
+
+/* Delay each link animation */
+header nav a:nth-child(1) {
+    animation-delay: 1.2s;
+}
+header nav a:nth-child(2) {
+    animation-delay: 1.4s;
+}
+header nav a:nth-child(3) {
+    animation-delay: 1.6s;
+}
+header nav a:nth-child(4) {
+    animation-delay: 1.8s;
+}
+
+/* Animation for fading in the links */
+@keyframes fadeInLinks {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect for links */
+header nav a:hover {
+    color: #FFD700; /* Gold color for hover effect */
+    transform: scale(1.1); /* Slight zoom on hover */
+    transition: 0.3s ease;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+    .header h1 {
+        font-size: 2rem;
+    }
+    header nav a {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #222;
+}
+
+header .logo h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: hsl(31, 85%, 51%);
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f79c42;
+}
+
+
+.hero {
+ background-color: #111;
+    height: 50vh;
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    position:right top;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 56px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 24px;
+    animation: fadeIn 2ms ease-in 3ms;
+}
+
+.hero button {
+    background-color: #f79c42;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background-color: #e67e22;
+}
+
+s
+
+/* Featured Cars Section */
+.featured-cars {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #222;
+}
+
+.featured-cars h2 {
+    font-size: 36px;
+    color: #f79c42;
+    margin-bottom: 50px;
+}
+
+.car-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.car-card {
+    background-color: #333;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.car-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.car-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.car-card button {
+    background-color: #f79c42;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.car-card button:hover {
+    background-color: #e67e22;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/* Slideshow Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;  
+    margin: 1 auto;    
+    overflow:visible;  
+}
+
+/* Carousel */
+.carousel {
+    display:flex; 
+    transition: transform 0.5s ease-in-out;  }
+
+/* Carousel Image */
+.carousel-image {
+    width: 100%;  
+    object-fit: cover;  
+}
+
+/* Previous & Next Buttons */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(77, 60, 7, 0.7);
+}
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header .logo h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .filters {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .filters label {
+            font-weight: bold;
+        }
+
+        .filters input {
+            padding: 8px;
+            font-size: 1rem;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .inventory-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .car-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .car-card:hover {
+            transform: scale(1.05);
+        }
+
+        .car-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .car-card h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .car-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .car-details p {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
