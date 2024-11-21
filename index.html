@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoExMotors - Car Sales</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>AutoExMotors</h1>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <marquee behaviour="scroll" direction="left">
+      Need a tune-up? Contact us at 0717760428 for smooth solutions and great
+      deals.
+    </marquee>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Your Dream Car Awaits</h2>
+        <p>Discover top-quality vehicles at unbeatable prices.</p>
+        <button onclick="location.href='inventory.html'">
+          Browse Our Cars
+        </button>
+      </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section class="featured-cars">
+      <h2>Featured Cars</h2>
+      <div class="car-grid">
+        <div class="car-card">
+          <img src="images/bmwsv.jpeg" alt="bmw" />
+          <h3>BMW X1</h3>
+          <p>Starting at ksh 1,800,000</p>
+          <a href="contact.html" class="buy-btn"
+            ><button>INQUIRE NOW</button>
+          </a>
+        </div>
+        <div class="car-card">
+          <img src="images/mcsv.jpeg" alt="Car 5" />
+          <h3>MINI COOPER</h3>
+          <p>Starting at ksh 1,000,000</p>
+          <a href="contact.html" class="buy-btn"
+            ><button>INQUIRE NOW</button>
+          </a>
+        </div>
+        <div class="car-card">
+          <img src="images/nssv.jpeg" alt="Car 6" />
+          <h3>NISSAN SYLPHY</h3>
+          <p>Starting at ksh 1,200,000</p>
+          <a href="contact.html" class="buy-btn"
+            ><button>INQUIRE NOW</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 AutoExMotors. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

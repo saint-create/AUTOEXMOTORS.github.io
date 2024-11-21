@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory - AutoExMotors</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts.js" defer></script>
+  
+<body>
+    <header>
+        <div class="logo">
+            <h1>AutoExMotors</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section>
+        <div class="filters">
+            <label for="makeFilter">Filter by Make:</label>
+            <input
+                type="text"
+                id="makeFilter"
+                placeholder="Search by make..."
+                oninput="filterCars()"
+            />
+        </div>
+        <div class="inventory-gallery" id="inventoryGallery">
+            <div class="car-card" onclick="showCarDetails('BMW X1')">
+                <img src="images/bmwfv.jpeg" alt="BMW X1" />
+                <h3>BMW X1</h3>
+                <p>Price: Ksh 1,800,000</p>
+                <p>Status: Available</p>
+            </div>
+            <div class="car-card" onclick="showCarDetails('Land Cruiser')">
+                <img src="images/landcruiserfv.jpeg" alt="Land Cruiser" />
+                <h3>Land Cruiser</h3>
+                <p>Price: Ksh 2,300,000</p>
+                <p>Status: Sold</p>
+            </div>
+            <div class="car-card" onclick="showCarDetails('Mini Cooper')">
+                <img src="images/mcfv.jpeg" alt="Mini Cooper" />
+                <h3>Mini Cooper</h3>
+                <p>Price: Ksh 1,200,000</p>
+                <p>Status: Available</p>
+            </div>
+            <div class="car-card" onclick="showCarDetails('Nissan Sylphy')">
+                <img src="images/nsfv.jpeg" alt="Nissan Sylphy" />
+                <h3>Nissan Sylphy</h3>
+                <p>Price: Ksh 1,100,000</p>
+                <p>Status: Available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for displaying car details -->
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Car Image" />
+            <div class="car-details">
+                <h3 id="modalTitle"></h3>
+                <p id="modalPrice"></p>
+                <p id="modalStatus"></p>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AutoExMotors. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Filter cars based on make
+        function filterCars() {
+            const filterValue = document.getElementById("makeFilter").value.toLowerCase();
+            const carCards = document.querySelectorAll(".car-card");
+
+            carCards.forEach((card) => {
+                const make = card.getAttribute("data-make") ? card.getAttribute("data-make").toLowerCase() : '';
+                if (make.includes(filterValue)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // Function to show more details in a modal when a car is clicked
+        function showCarDetails(carName) {
+            const cars = {
+                "BMW X1": {
+                    image: "images/bmwfv.jpeg",
+                    price: "Ksh 1,800,000",
+                    status: "Available",
+                    description: "The BMW X1 is a compact luxury crossover SUV known for its sporty performance and premium features."
+                },
+                "Land Cruiser": {
+                    image: "images/landcruiserfv.jpeg",
+                    price: "Ksh 2,300,000",
+                    status: "Sold",
+                    description: "The Toyota Land Cruiser is a full-size SUV with exceptional off-road capabilities and durability."
+                },
+                "Mini Cooper": {
+                    image: "images/mcfv.jpeg",
+                    price: "Ksh 1,200,000",
+                    status: "Available",
+                    description: "The Mini Cooper offers a fun driving experience with its compact design and stylish appeal."
+                },
+                "Nissan Sylphy": {
+                    image: "images/nsfv.jpeg",
+                    price: "Ksh 1,100,000",
+                    status: "Available",
+                    description: "The Nissan Sylphy is a practical and fuel-efficient compact sedan with modern technology."
+                }
+            };
+
+            const carDetails = cars[carName];
+
+            // Populate modal with car details
+            document.getElementById("modalImage").src = carDetails.image;
+            document.getElementById("modalTitle").textContent = carName;
+            document.getElementById("modalPrice").textContent = `Price: ${carDetails.price}`;
+            document.getElementById("modalStatus").textContent = `Status: ${carDetails.status}`;
+            document.getElementById("modalDescription").textContent = carDetails.description;
+
+            // Show modal
+            document.getElementById("carModal").style.display = "flex";
+        }
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById("carModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
